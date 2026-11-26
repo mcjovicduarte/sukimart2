@@ -1,0 +1,232 @@
+.panel {
+  background: #f9f8f2;
+  border: 1px solid #dfe9e6;
+  border-radius: 16px;
+  overflow: hidden;
+  color: #263a40;
+}
+.heading {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e1eae7;
+}
+.heading h2 {
+  font-size: 18px;
+  margin: 0;
+}
+.heading p {
+  font-size: 13px;
+  color: #667c80;
+  margin: 5px 0 0;
+}
+.conversationHeading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.callButton, .callUnavailable {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}
+.callButton { color: #fff; background: #426c7d; text-decoration: none; }
+.callButton:hover { background: #315665; }
+.callButton:focus-visible { outline: 3px solid #5c899d; outline-offset: 3px; }
+.callUnavailable { color: #9aa9aa; background: #edf1ef; cursor: not-allowed; }
+.layout {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  min-height: 480px;
+}
+.customerLayout {
+  display: block;
+}
+.list {
+  border-right: 1px solid #e1eae7;
+  max-height: 560px;
+  overflow: auto;
+  padding: 8px;
+}
+.listHeading {
+  margin: 8px 12px;
+  color: #63797d;
+  font-size: 12px;
+  font-weight: 700;
+}
+.list button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  border-radius: 9px;
+  padding: 12px;
+  cursor: pointer;
+}
+.list .selected {
+  background: #e3f0f0;
+  color: #315665;
+  font-weight: 700;
+}
+.conversation {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 460px;
+}
+.messages {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: auto;
+  max-height: 450px;
+  min-height: 320px;
+  flex: 1;
+  background: #f1efe5;
+}
+.bubble {
+  max-width: 80%;
+  align-self: flex-start;
+  padding: 10px 13px;
+  border-radius: 14px;
+  background: #edf3f1;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.mine {
+  align-self: flex-end;
+  background: #9ebcc5;
+  color: #101c20;
+}
+.bubble small {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+  opacity: 0.75;
+}
+.form {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid #e1eae7;
+}
+.form textarea {
+  flex: 1;
+  min-width: 0;
+  resize: vertical;
+  border: 1px solid #c5d8d7;
+  border-radius: 8px;
+  padding: 10px;
+  font: inherit;
+}
+.composer {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  gap: 8px;
+}
+.composer textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+.form .addImage {
+  flex: none;
+  align-self: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border-radius: 50%;
+  background: #e3f0f0;
+  color: #315665;
+  font-size: 26px;
+  line-height: 1;
+}
+.form .addImage:focus-visible {
+  outline: 3px solid #5c899d;
+  outline-offset: 2px;
+}
+.attachmentInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.attachmentInfo button {
+  padding: 4px 8px;
+  background: #edf5f4;
+  color: #304a53;
+}
+.chatImage {
+  display: block;
+  max-width: min(260px, 100%);
+  max-height: 240px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+.form button {
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 18px;
+  background: #426c7d;
+  color: #fff;
+  cursor: pointer;
+}
+.form button:disabled {
+  opacity: 0.5;
+}
+.error {
+  padding: 10px 16px;
+  color: #a12222;
+  font-size: 13px;
+}
+.empty {
+  color: #687d80;
+  padding: 16px;
+  font-size: 14px;
+}
+.close {
+  float: right;
+  border: 0;
+  background: #edf5f4;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+@media (max-width: 650px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .list {
+    border-right: 0;
+    border-bottom: 1px solid #e1eae7;
+    max-height: 160px;
+  }
+  .conversation {
+    min-height: 350px;
+  }
+  .messages {
+    min-height: 220px;
+  }
+  .bubble {
+    max-width: 90%;
+  }
+}
+.unread {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  margin-left: 7px;
+  border-radius: 999px;
+  background: #d93832;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
